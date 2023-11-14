@@ -1,0 +1,34 @@
+<section class="py-2 nav-3">
+    <div class="container">
+        <div class="">
+            <ul class=" nav2 d-flex gap-5">
+                <li (click)="getCategory('entertainment')">Entertainment</li>
+                <li (click)="getCategory('general')">Entertainment</li>
+                <li (click)="getCategory('health ')">Entertainment</li>
+                <li (click)="getCategory('science')">Entertainment</li>
+                <li (click)="getCategory('sports')">Entertainment</li>
+                <li (click)="getCategory('technology')">Technology</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <marquee class="py-3" direction = "left" class="d-flex">
+                <p>News Now</p>
+
+            </marquee>
+             <h1 class="py-3">Top headlines</h1>
+            @for (item of arraynews; track item.name) {
+                <div class="col-md-3">
+                    <img src="{{item.urlToImage}}" alt="" class="" height="200" width="280">
+                    <h6>{{item.title}}</h6>
+                    <a href="{{item.url}}" class="p-0 m-0">See More</a>
+                </div>
+              } @empty {
+                <li> There are no items. </li>
+              }
+        </div>
+    </div>
+</section>

@@ -1,0 +1,36 @@
+.navbar{
+    background-color: red !important;
+    color: white !important;
+    a{
+        color: white !important;
+    }
+}
+
+.bg-dark{
+    .container{
+        .d-flex{
+            ul{
+               
+                   li{
+                    a{
+                        color: white !important;
+                    }
+                }
+                }
+                
+            }
+        }
+    }
+
+    .nav2{
+        justify-content: center !important;
+        align-items: center;
+        display: flex;
+        gap: 190px !important;
+    
+        color: white;
+        list-style: none;
+    }
+    .nav-3{
+        background-color:black;
+    }
