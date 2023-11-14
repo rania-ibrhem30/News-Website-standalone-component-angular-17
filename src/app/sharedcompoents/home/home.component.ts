@@ -12,6 +12,7 @@ import { ApiService } from '../api.service';
 })
 export class HomeComponent {
   arraynews:any[]=[];
+  urlToImage:any
 constructor(private api:ApiService){
 }
 getNews() {
@@ -29,6 +30,7 @@ getCategory(category: string) {
   this.api.getHeadlines(category).subscribe(
     (res: any) => {
       this.arraynews = res.articles;
+      this.urlToImage=res.articles.urlToImage
       console.log(this.arraynews);
     },
     (err) => {
