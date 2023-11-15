@@ -12,6 +12,7 @@ import { ApiService } from '../api.service';
 })
 export class HomeComponent {
   arraynews:any[]=[];
+  arrayeveruthing:any[]=[];
   urlToImage:any
 constructor(private api:ApiService){
 }
@@ -38,8 +39,19 @@ getCategory(category: string) {
     }
   );
 }
+getEverthigh(){
+  this.api.getall().subscribe(
+    (res: any) => {
+    this.arrayeveruthing = res.articles;
+    console.log(this.arraynews);
+  },
+  (err) => {
+    console.log(err);
+  })
+}
 ngOnInit(): void{
   this.getNews()
+  this.getEverthigh();
 }
 
 }

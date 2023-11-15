@@ -1,12 +1,12 @@
 <section class="py-2 nav-3">
     <div class="container">
         <div class="">
-            <ul class=" nav2 d-flex gap-5">
+            <ul class=" nav2 d-flex gap-5 p-0 m-0">
                 <li (click)="getCategory('entertainment')">Entertainment</li>
                 <li (click)="getCategory('general')">General</li>
-                <li (click)="getCategory('health ')">health</li>
-                <li (click)="getCategory('science')">science</li>
-                <li (click)="getCategory('sports')">sports</li>
+                <li (click)="getCategory('health ')">Health</li>
+                <li (click)="getCategory('science')">Science</li>
+                <li (click)="getCategory('sports')">Sports</li>
                 <li (click)="getCategory('technology')">Technology</li>
             </ul>
         </div>
@@ -16,7 +16,7 @@
     <div class="container">
         <div class="row">
             <marquee class="py-3" direction = "left" class="d-flex">
-                <p>News Now</p>
+                <p>There is also a minor endpoint that can be used to retrieve a small subset of the publishers we can scan</p>
 
             </marquee>
              <h1 class="py-3">Top headlines</h1>
@@ -24,6 +24,55 @@
                 <div class="col-md-3">
                     <img src="{{item.urlToImage}}" alt="" class="" height="200" width="280">
                     <h6>{{item.title}}</h6>
+                    <small style="color: red;"> Date: {{item.publishedAt | date }}</small> <br>
+
+                    <small class="py-3">{{item.description}}</small>
+                    <a href="{{item.url}}" class="p-0 m-0">See More</a>
+                </div>
+              } @empty {
+                <li> There are no items. </li>
+              }
+            
+        </div>
+    </div>
+</section>
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <marquee class="py-3" direction = "left" class="d-flex">
+                <p>There is also a minor endpoint that can be used to retrieve a small subset of the publishers we can scan</p>
+
+            </marquee>
+             <h1 class="py-3">Sports</h1>
+            @for (item of arrayeveruthing; track item.name) {
+                <div class="col-md-3">
+                    <img src="{{item.urlToImage}}" alt="" class="" height="200" width="280">
+                    <h6>{{item.title}}</h6>
+                    <small style="color: red;"> Date: {{item.publishedAt | date }}</small> <br>
+                    <small class="py-3">{{item.description}}</small>
+                    <a href="{{item.url}}" class="p-0 m-0">See More</a>
+                </div>
+              } @empty {
+                <li> There are no items. </li>
+              }
+            
+        </div>
+    </div>
+</section>
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <marquee class="py-3" direction = "left" class="d-flex">
+                <p>There is also a minor endpoint that can be used to retrieve a small subset of the publishers we can scan</p>
+
+            </marquee>
+             <h1 class="py-3">Sports</h1>
+            @for (item of arraynews; track item.name) {
+                <div class="col-md-3">
+                    <img src="{{item.urlToImage}}" alt="" class="" height="200" width="280">
+                    <h6>{{item.title}}</h6>
+                    <small style="color: red;"> Date: {{item.publishedAt | date }}</small> <br>
+                    <small class="py-3">{{item.description}}</small>
                     <a href="{{item.url}}" class="p-0 m-0">See More</a>
                 </div>
               } @empty {
