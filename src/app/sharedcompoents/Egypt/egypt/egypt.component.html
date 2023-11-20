@@ -1,0 +1,26 @@
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+       
+            @for (item of egypt; track item.name) {
+                <div class="col-md-3">
+                    <ng-container *ngIf="item.urlToImage; else placeholder">
+                        <img [src]="item.urlToImage" alt="" class="" height="200" width="280" />
+                      </ng-container>
+                      
+                      <ng-template #placeholder>
+                        <img src="../../../../assets/WhatsApp Image 2023-11-20 at 3.45.55 PM.jpeg" alt="Placeholder Image" class="" height="370" width="300" />
+                      </ng-template>
+                    <h6>{{item.title}}</h6>
+                    <small style="color: red;"> Date: {{item.publishedAt | date }}</small> <br>
+                    <small class="py-3">{{item.description}}</small>
+                    <a href="{{item.url}}" class="p-0 m-0">See More</a>
+                </div>
+              } @empty {
+                <li> There are no items. </li>
+              }
+             
+    </div>
+    </div>
+
+</section>

@@ -16,5 +16,7 @@ export class ApiService {
   getall(){
     return this.http.get("https://newsapi.org/v2/everything?sources=bbc-news&apiKey=c7308dfe73a44ffb8da2bcd28e646178")
   }
-
+   getnewsEg(){
+    return this.http.get("https://newsapi.org/v2/top-headlines?country=eg&apiKey=c7308dfe73a44ffb8da2bcd28e646178")
+   }
 }
